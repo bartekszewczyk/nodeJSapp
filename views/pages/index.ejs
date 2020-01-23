@@ -1,31 +1,62 @@
 <%- include ("../partials/header") %>
+<%- include("../partials/sidebar") %>
 
-<div class="container">	
-	<header class="jumbotron">
+<div class="wrap">	
+	<div class="container fadeInDown">
+		
+	<header class="jumbotron mt-3">
 		<div class="container">
-			<h1>Welcome to Node JS Apps!</h1>
-			<p>View some of mine JS apps :)</p>
-			<p>
-				<a class="btn btn-primary btn-large" href="/pages/new">Add New Page</a>
-			</p>
+			<h1 class="display-3">Welcome!</h1>
+			<hr class="my-4">
+				<p class="lead"> &#9827; View some more &#9827; </p>
+				<p>
+					<a class="btn btn-secondary btn-lg" href="/pages/new">Add New Page »</a>
+				</p>
 		</div>
 	</header>
 
-	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+	<div class="row text-center">
 		<% pages.forEach(function(page){ %>
 			<div class="col-md-3 col-sm-6">
-				<div class="thumbnail">
-					<img src="<%= page.image %>"> 
-					<div class="caption">
+				<figure class="figure">
+					<img class="figure-img img-fluid rounded" src="<%= page.image %>"> 
+					<figcaption class="figure-caption">
 						<h4><%= page.name %></h4>
-					</div>
+					</figcaption>
 					<p>
-						<a href="/pages/<%= page._id %>" class="btn btn-primary">More Info</a>
+						<a class="btn btn-outline-secondary" href="/pages/<%= page._id %>"> More Info </a>
 					</p>
-				</div>
+				</figure>
 			</div>
 		<% }); %>
 	</div>
+
+	<div class="container">
+	<section class="row">
+		<div class="col-md-4">
+			<h2>Heading</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at libero nunc. Ut nec maximus leo, et tristique lacus. Praesent condimentum eleifend gravida. Phasellus pharetra finibus sapien, in ullamcorper orci imperdiet at. Phasellus vel arcu suscipit, pellentesque massa nec, tincidunt neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus tristique nunc nec finibus commodo. In hac habitasse platea dictumst. Vivamus mattis nec lorem sed sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec tristique, orci a feugiat vulputate, enim risus egestas mi, ac efficitur purus est placerat justo. Vestibulum ex erat, facilisis at quam quis, euismod vehicula magna. Aliquam faucibus laoreet sapien nec vulputate. Etiam a sapien sit amet risus fermentum vehicula eu et velit.
+  		</p>
+			<a class="btn btn-outline-secondary">View more</a>
+		</div>
+		<div class="col-md-4">
+		<h2>Heading</h2>
+  		<p>Morbi cursus et nunc id efficitur. In hac habitasse platea dictumst. Donec vestibulum fermentum nisi vitae mattis. Nullam volutpat dictum dui, eget dictum nisi posuere nec. Integer blandit metus quis nibh pretium tincidunt. Proin sodales semper nisl. Cras quis tellus et magna venenatis tincidunt sit amet vel lacus. Aenean hendrerit venenatis elementum. Nunc et rutrum massa. Proin in felis tortor. Aliquam erat volutpat. Vestibulum convallis, metus eget blandit interdum, nisi velit eleifend nisi, ut hendrerit arcu erat sollicitudin nisi. Pellentesque iaculis suscipit erat, eget vulputate quam rutrum sed. Ut finibus nunc dui. Donec commodo ut sem nec vulputate.
+  		</p>
+			<a class="btn btn-outline-secondary">View more</a>
+		</div>
+		<div class="col-md-4">
+			<h2>Heading</h2>
+  		<p>Sed pulvinar dolor eu imperdiet laoreet. Quisque consectetur rutrum magna in tristique. Quisque sapien ante, fringilla quis pellentesque eu, molestie sed magna. Integer varius mauris sit amet lacinia commodo. Sed rutrum auctor pellentesque. Donec semper, est non euismod consequat, mauris metus varius lacus, vitae pellentesque leo mauris sed diam. Donec non lorem quis lectus varius faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+  		</p>
+			<a class="btn btn-outline-secondary">View more</a>
+		</div>
+		
+	</section>
+	</div>
+
+</div>
+	
 </div>
 
 <%- include ("../partials/footer") %>

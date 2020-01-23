@@ -1,58 +1,81 @@
 <%- include("../partials/header") %>
-<div class="container">
-	<div class="row">
-		<div class="col-md-3">
-			<p class="lead">Menu</p>
-				<div class="list-group">
-					<li class="list-group-item active">Home</li>
-					<li class="list-group-item">Apps</li>
-					<li class="list-group-item">Fun stuff</li>
+<%- include("../partials/sidebar") %>
+
+<!-- MAIN Container -->
+<div class="wrap fadeInDown">
+	<!-- CENTER Container -->
+	<div class="col-md-2">
+		<%- include("../partials/menu") %>
+	</div>
+	<!-- /.CENTER  Container -->
+	<!-- CONTENT Container -->
+	<div class="container">
+		<div class="card m-4 p-4">
+	    <div class="card-body p-1">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="thumbnail">
+					<img class="img img-fluid" src=" <%= page.image %> ">
+					<div class="caption-full">
+						<h4 class="float-right"><strong>$<%= page.price %> / hour</strong></h4>
+						<h4><a><%= page.name %></a></h4>
+						<p> <%= page.description %> </p>
+						<p>
+							<em>Submitted By <strong class="text-info">
+									<%= page.author.username %> </strong></em> </p>
+						<% if( currentUser && page.author.id.equals(currentUser._id) ) { %>
+						<a class="btn btn-xs btn-outline-warning" href="/pages/<%=page._id %>/edit">Edit</a>
+						<form id="delete-form" action="/pages/<%= page._id %>?_method=DELETE" method="POST">
+							<button class="btn btn-xs btn-outline-danger">Delete</button>
+						</form>
+						<% } %>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="col-md-9">
-			<div class="thumbnail">
-				<img class="img-responsive" src="<%= page.image %> ">
-				<div class="caption-full">
-					<h4 class="pull-right"><strong>$<%= page.price %> /night</strong></h4>
-					<h4><a><%= page.name %></a></h4>
-					<p> <%= page.description %> </p>
-					<p>
-						<em>Submitted By <%= page.author.username %></em> </p>
-					<% if(currentUser && page.author.id.equals(currentUser._id)){ %>
-					<a class="btn btn-xs btn-warning" href="/pages/<%=page._id %>/edit">Edit</a>
-					<form id="delete-form" action="/pages/<%= page._id %>?_method=DELETE" method="POST">
-						<button class="btn btn-xs btn-danger">Delete</button>
-					</form>
-					<% } %>
-				</div>
-			</div>
-			<div class="well">
-				<div class="text-right">
-					<a class="btn btn-success" href="/pages/<%= page._id %>/comments/new">Add New Comment</a> 
-
-				</div>
-				<% page.comments.forEach(function(comment){ %>
-					<div class="row">
-						<div class="col-md-12">
-							<strong><%= comment.author.username %></strong>
-							<span class="pull-right">10 days ago</span>
-							<p>
-								<%= comment.text %>
-							</p>	
-							<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
-							<a class="btn btn-xs btn-warning" 
-							   href="/pages/<%= page._id %>/comments/<%= comment._id %>/edit">Edit</a>
+		</div>
+		</div>
+		<!-- Comments Section -->
+		<div class="card m-4 p-4">
+		<div class="card-body p-1">
+			<% page.comments.forEach(function(comment){ %>
+	        <div class="row">
+        	    <div class="col-md-2">
+        	        <img src="images/def_face.jpg" class="img img-rounded img-fluid"/>
+        	        <p class="text-secondary text-center"><%= comment.created.toDateString() %></p>
+        	    </div>
+        	    <div class="col-md-10">
+        	        <section>
+        	            <a class="float-left" href="#"><strong><%= comment.author.username %></strong></a>
+        	            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+        	            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+        	            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+						<% if( currentUser && comment.author.id.equals(currentUser._id) ) { %>
+						<section>
 							<form id="delete-form" action="/pages/<%= page._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-								<input class="btn btn-xs btn-danger" type="submit" value="Delete">
+								<input class="float-right btn btn-outline-danger ml-2" type="submit" value="Delete">
 							</form>
-							<% } %>
-						</div>
-					</div>
-				<% }); %>
+							<a class="float-right btn btn-outline-warning ml-2" href="/pages/<%= page._id %>/comments/<%= comment._id %>/edit"> 
+								<i class="fa fa-heart"></i> Edit</a>
+						</section>
+						<% } %>
+        	      	</section>
+        	      	<div class="clearfix"></div>
+        	    	<p><%= comment.text %></p>
+				</div>
+        	</div>
+			<% }); %>
+			<div class="text-right m-2">
+				<a href="/pages/<%= page._id %>/comments/new" class="btn btn-secondary btn-sm btn-block ml-2" role="button">
+					<span class="glyphicon glyphicon-refresh"></span> Add New Comment »</a>
 			</div>
+	    </div>
 		</div>
 	</div>
-
-
+	<!-- /.Comments Section -->
+	<!-- /.CONTENT Container -->
 </div>
+<!-- /.MAIN Container -->
+
 <%- include("../partials/footer") %>
