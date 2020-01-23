@@ -47,7 +47,22 @@ router.get("/logout", function(req, res){
 	res.redirect("/pages");
 });
 
+// ADDITIONAL ROUTES, APPS
 
+// colorgame app
+router.get("/colorgame", function(req, res){
+	res.render("colorgame");
+});
+
+// drums app
+router.get("/drums", function(req, res){
+	res.render("drums");
+});
+
+// TODOs app
+router.get("/todos", function(req, res){
+	res.render("todos");
+});
 
 module.exports = router;
 
