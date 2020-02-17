@@ -1,37 +1,59 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top fadeInDown">
+<script>
+
+  jQuery(document).ready(function($) {
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 400) {
+            $('navbar').removeClass('bg-dark');
+        }
+        else{
+            $('navbar').addClass('bg-dark');
+        }
+    });
+});
+  // $('navbar').on('scroll', function() {
+  //   var scrollTop = this.scrollTop;
+  //     document.getElementById("bg-dark").classList.remove('bg-dark');
+  // })
+</script>
+
+<nav id="navbar" class="navbar navbar-expand-sm navbar-dark p-3 sticky-top bg-dark fadeInDown">
   <div class="container">
     <a class="navbar-brand" href="/pages">(-_(-_-)_-)</a>
-   		<div class="navbar-collapse collapse" id="navbarResponsive">
-      		<ul class="navbar-nav ml-auto">
-		  	<% if(!currentUser){ %>
-        		<li class="nav-item active">
-          			<a class="nav-link bg-secondary" href="/login">Login</a>
-        		</li>
-        		<li class="nav-item">
-          			<a class="nav-link" href="/register">Sign Up</a>
-        		</li>
-		  	<% } else { %>
-        		<li class="nav-item">
-          			<a class="nav-link" href="#">Hello, <strong><%= currentUser.username %> ! </strong></a>
-        		</li>
-        		<li class="nav-item">
-          			<a class="nav-link bg-secondary" href="/logout">Logout</a>
-        		</li>
-		  	<% } %>
-      		</ul>
-    	</div>
-  </div>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav d-flex-reverse">
+        <% if(!currentUser){ %>
+        <li class="nav-item active">
+          <a class="nav-link bg-secondary" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/register">Sign Up</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hello, <strong><%= currentUser.username %> ! </strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bg-secondary" href="/logout">Logout</a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+    </div>
+
 </nav>
 
-		<div class="container fadeInDown">
-			<% if(error && error.length > 0) { %>
-				<div class="alert alert-danger m-2" role="alert"> 
-					<%= error %> 
-				</div>
-			<% } %>
-			<% if(success && success.length > 0) { %>
-			<div class="alert alert-success mt-2" role="alert"> 
-				<%= success %> 
-			</div>
-			<% } %>
-		</div>
+<div class="container fadeInDown">
+  <% if(error && error.length > 0) { %>
+  <div class="alert alert-danger m-2" role="alert">
+    <%= error %>
+  </div>
+  <% } %>
+  <% if(success && success.length > 0) { %>
+  <div class="alert alert-success mt-2" role="alert">
+    <%= success %>
+  </div>
+  <% } %>
+</div>
