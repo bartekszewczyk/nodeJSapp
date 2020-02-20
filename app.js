@@ -16,13 +16,13 @@ var commentRoutes	 = require("./routes/comments"),
 	pageRoutes = require("./routes/pages"),
 	indexRoutes 	 = require("./routes/index");
 
-mongoose.connect("mongodb://localhost:27017/nodeJSapp", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb://mongo:27017/nodeJSapp", {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
-// seedDB(); //seed the database
+seedDB(); //seeds the database
 
 
 // PASSPORT CONFIGURATION

@@ -26,7 +26,7 @@ var data = [
 ]
  
 function seedDB(){
-   //Remove all campgrounds
+   //Remove all pages
    Page.remove({}, function(err){
         if(err){
             console.log(err);
@@ -47,8 +47,8 @@ function seedDB(){
                         //create a comment
                         Comment.create(
                             {
-                                text: "This place is great, but I wish there was internet",
-                                author: "Homer"
+                                text: "To jest jakiś treściwy komentarz",
+                               author: "asd"
                             }, function(err, comment){
                                 if(err){
                                     console.log(err);
@@ -62,8 +62,8 @@ function seedDB(){
                 });
             });
         });
-    }); 
+    });
     //add a few comments
 }
- 
+
 module.exports = seedDB;
