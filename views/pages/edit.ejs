@@ -1,11 +1,12 @@
-<%- include ("../partials/header") %>
+<%- include("../partials/header") %>
 <%- include("../partials/sidebar") %>
 
-<div class="wrap fadeIn">
 
-<div class="loginWrapper">
-	<div class="loginContainer">
-		<p class="loginWrapper">Edit page: " <%= page.name %> "</p>
+<div class="formContainer fadeIn">
+	<div class="row">
+		<div class="col-sm-12 mb-5 mt-5">
+	<div class="">
+		<p class="">Edit page: " <%= page.name %> "</p>
 		<form action="/pages/<%= page._id %>?_method=PUT" method="POST">
 			<div class="form-group">
 				<input class="form-control" type="text" name="page[name]" value="<%= page.name %>">
@@ -25,8 +26,8 @@
 		</form>
 		<a href="/pages/<%= page.id %>">Go Back</a>
 	</div>
-</div>
-
+	</div>
+	</div>
 </div>
 
 <%- include ("../partials/footer") %>

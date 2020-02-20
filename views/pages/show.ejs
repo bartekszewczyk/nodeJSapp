@@ -2,16 +2,16 @@
 <%- include("../partials/sidebar") %>
 
 <!-- MAIN Container -->
-<div class="container-fluid fadeIn">
+<div class="container-fluid fadeIn pb-5">
   <!-- MENU -->
   <div class="row">
-    <aside class="col-lg-4 col-md-6 col-sm-12">
+    <aside class="col-lg-3 col-md-6 col-sm-12">
       <%- include("../partials/menu") %>
       <!-- /.MENU -->
     </aside>
     <!-- CONTENT Container -->
     <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="container-fluid">
+      <div class="">
         <div class="card-body mt-4 bg-light border">
           <div class="row p-3">
             <div class="col-sm-12">
@@ -37,7 +37,7 @@
             <% if( currentUser && page.author.id.equals(currentUser._id) ) { %>
             <a class="p-1 px-3 ml-1 btn btn-sm btn-outline-warning" href="/pages/<%=page._id %>/edit">Edit</a>
             <form id="delete-form" action="/pages/<%= page._id %>?_method=DELETE" method="POST">
-              <button class="p-1 px-4 btn btn-sm btn-outline-danger">Delete</button>
+              <input class="p-1 px-4 btn btn-sm btn-outline-danger" type="submit" value="Delete">
             </form>
             <% } %>
           </div>
@@ -56,7 +56,7 @@
               </div>
             </div>
             <div class="col-sm-8">
-              <div class="card-body">
+              <div class="card-body text-left">
                 <p><%= comment.text %></p>
                 <% if( currentUser && comment.author.id.equals(currentUser._id) ) { %>
                 <section class="d-flex flex-row-reverse pr-3">
@@ -64,7 +64,7 @@
                     <input class="btn btn-sm btn-outline-danger m-1" type="submit" value="Delete">
                   </form>
                   <a class="btn btn-sm btn-outline-warning m-1" href="/pages/<%= page._id %>/comments/<%= comment._id %>/edit">
-                    <i class="fa fa-heart"></i> Edit</a>
+                    <i class=""></i> Edit</a>
                 </section>
                 <% } %>
               </div>

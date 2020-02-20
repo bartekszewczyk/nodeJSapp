@@ -1,10 +1,10 @@
 <%- include ("../partials/header") %>
 <%- include("../partials/sidebar") %>
 
-<div class="wrap">
+<div class="formContainer">
 
-<div class="loginWrapper fadeIn">
-	<div class="formContainer">
+<div class="fadeIn">
+	<div class="">
 		<div class="">
 			<p class="">Add New Comment To: " <%= page.name %> "</p>
     	</div>
@@ -13,7 +13,7 @@
 				<input class="form-control" type="text" name="comment[text]" placeholder="text">
 			</div>
 			<div class="form-group">
-				<button class="btn btn-large btn-secondary btn-block"> Add </button>
+				<input class="btn btn-large btn-secondary btn-block" value="Add Comment">
 			</div>
 		</form>
 		<a href="/pages/<%= page.id %>">Go Back</a>

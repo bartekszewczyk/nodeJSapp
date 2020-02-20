@@ -17,13 +17,14 @@ $("input[type='text']").keypress(function(event) {
     var todoText = $(this).val();
     $(this).val("");
     //create a new li and add to ul
-    $("#listTodos").append("<li class='liTodos'><span class='spanTodos'><i class='fa fa-trash'></i></span> " + todoText + "</li>");
+    $("ul").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>");
   }
 });
 
 $(".fa-plus").click(function(){
   $("input[type='text']").fadeToggle();
 });
+
 
  function getCounter(){
       var count = $(this).find(".jquery-accordion-menu").children('li').length;

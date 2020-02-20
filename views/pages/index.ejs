@@ -1,40 +1,44 @@
-<%- include ("../partials/header") %>
+<%- include("../partials/header") %>
 <%- include("../partials/sidebar") %>
 
-<main class="wrap fadeIn">
-
-  <header class="jumbotron">
-    <div class="container">
-      <h1 class="display-3">Welcome!</h1>
-      <hr class="my-4">
-      <p>
-        <a class="btn btn-secondary btn-lg" href="/pages/new">Add New Page »</a>
-      </p>
-  </header>
-
-  <section class="container">
-
+<main class="fadeIn">
+  <div class="container-fluid">
     <div class="row">
-      <% pages.forEach(function(page){ %>
-      <div class="col-md-3 col-sm-4 col-xs-6">
-        <media class="p-3 m-2">
-          <div class="grid">
-            <figure class="effect-oscar">
-              <img class="img img-responsive img-fluid rounded" src="<%= page.image %>">
-              <figcaption>
-                <h2><%= page.name %></h2>
-                <a href="/pages/<%= page._id %>">View more</a>
-                <p> $_$ </p>
-              </figcaption>
-            </figure>
-          </div>
-        </media>
+      <div class="col-lg-2 col-md-12 col-sm-12 m-1">
+        <%- include("../partials/menu") %>
       </div>
-      <% }); %>
+
+      <div class="col-lg-8 col-md-12 col-sm-12 m-1">
+        <header class="jumbotron">
+          <h1 class="display-3 ml-5">Welcome!</h1>
+          <hr class="my-4">
+          <p>
+            <a class="btn btn-secondary btn-lg ml-5" href="/pages/new">Add New Page »</a>
+          </p>
+        </header>
+      </div>
     </div>
+  </div>
 
-
-  </section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 hidden-sm">
+      </div>
+      <div class="col-md-10 col-md-10 col-sm-12">
+        <% pages.forEach(function(page){ %>
+        <a href="/pages/<%= page._id %>">
+          <figure class="col-md-4">
+            <img class="img-fluid img-shadow img-animation" src="<%= page.image %>">
+            <!-- <figcaption>
+                <%= page.name %>
+                <p> View more </p>
+              </figcaption> -->
+          </figure>
+        </a>
+        <% }); %>
+      </div>
+    </div>
+  </div>
 
 </main>
 

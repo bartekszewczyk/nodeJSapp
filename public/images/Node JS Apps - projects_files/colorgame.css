@@ -21,13 +21,12 @@
   max-width: 600px;
 }
 
-
 #headingColor {
   text-align: center;
   line-height: 1.4;
   font-weight: normal;
   color: white;
-  background: #343a40;
+  background: #232323;
   margin: 0;
   text-transform: uppercase;
   padding: 20px 0;
@@ -53,10 +52,10 @@
 
 .selected {
   color: white;
-  background: #343a40;
+  background: #232323;
 }
 
-.buttonColor {
+button {
   text-transform: uppercase;
   border: none;
   background: none;
@@ -71,12 +70,12 @@
   outline: none;
 }
 
-.buttonColor:focus {
+button:focus {
   outline: none;
 }
 
-.buttonColor:hover {
+button:hover {
   color: white;
-  background: #343a40;
+  background: #232323;
   outline: none;
 }

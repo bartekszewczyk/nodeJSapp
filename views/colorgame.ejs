@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>COLORGAME</title>
-  <link rel="stylesheet" type="text/css" href="stylesheets/colorgame.css">
-</head>
-
-<body>
-  <h1>
+<%- include("partials/header") %>
+<%- include("partials/sidebar") %>
+<div id="bodyColor">
+  <h1 id="headingColor">
     The Great
     <br>
     <span id="colorDisplay">RGB</span>
@@ -17,23 +10,19 @@
   </h1>
 
   <div id="stripe">
-    <button id="reset">New Colors</button>
+    <button id="reset" class="buttonColor" name="button">">New Colors</button>
     <span id="message"></span>
-    <button class="mode">Easy</button>
-    <button class="mode selected">Hard</button>
+    <button class="mode buttonColor">Easy</button>
+    <button class="mode buttonColor selected">Hard</button>
   </div>
 
-  <div id="container">
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-  </div>
-
-</body>
-
+    <div id="container">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+    </div>
+</div>
 <script src="javascripts/colorgame.js"></script>
-
-</html>

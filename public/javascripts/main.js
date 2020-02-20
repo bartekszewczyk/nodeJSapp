@@ -1,15 +1,20 @@
-$('navbar').on('scroll', function () {
+$('navbar').on('scroll', function() {
   var scrollTop = this.scrollTop;
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      document.getElementById("navbar").classList.remove('bg-dark');
-      document.getElementById("navbar").classList.add('bg-transparent');
-    } else {
-      document.getElementById("navbar").classList.remove('bg-transparent');
-      document.getElementById("navbar").classList.add('bg-dark');
-    }
-  })
+    document.getElementById("navbar").classList.remove('bg-dark');
+    document.getElementById("navbar").classList.add('bg-transparent');
+  } else {
+    document.getElementById("navbar").classList.remove('bg-transparent');
+    document.getElementById("navbar").classList.add('bg-dark');
+  }
+})
 
+function getCounter(){
+     var count = $(this).find(".listTodos").children('li').length;
+     $(this).find("liTodos.spanTodos").text(count);
+ }
 
+ $(".jquery-accordion-menu-label").each(getCounter);
 
 $(document).ready(function() {
   jQuery(document).ready(function() {

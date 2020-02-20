@@ -27,7 +27,7 @@ app.use(flash());
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
-	secret: "This is the secret password hash!",
+	secret: "To jest tajny skrypt kamuflujacy hasla !!",
 	resave: false,
 	saveUninitialized: false
 }));

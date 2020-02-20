@@ -7,8 +7,6 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  min-height: 60%;
-  padding: 20px;
 }
 
 .loginContent {
@@ -47,7 +45,16 @@ h2.active {
   border-bottom: 2px solid #5fbae9;
 }
 
+a {
+  color: #92badd;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+}
 
+a:hover {
+    text-decoration: none;
+}
 
 /* FORM TYPOGRAPHY*/
 

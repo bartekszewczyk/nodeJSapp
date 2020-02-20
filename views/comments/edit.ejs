@@ -1,13 +1,10 @@
-<%- include ("../partials/header") %>
+<%- include("../partials/header") %>
 <%- include("../partials/sidebar") %>
 
-<div class="wrap">
 
-<div class="loginWrapper fadeIn">
-	<div class="loginContainer">
-		<div class="fadeIn first">
-			<p class="loginWrapper">Edit Comment: </p>
-    	</div>
+<div class="formContainer fadeIn">
+	<div class="">
+			<p class="">Edit Comment: </p>
 		<form action="/pages/<%= page_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
 			<div class="form-group">
 				<input class="form-control" type="text" name="comment[text]" value="<%= comment.text %>">
@@ -20,6 +17,5 @@
 	</div>
 </div>
 
-</div>
 
 <%- include ("../partials/footer") %>

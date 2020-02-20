@@ -33,9 +33,9 @@ router.get("/login", function(req, res){
 	res.render("login");
 });
 // handling login logic
-router.post("/login", passport.authenticate("local", 
+router.post("/login", passport.authenticate("local",
 	{
-		successRedirect: "/pages", 
+		successRedirect: "/pages",
 		failureRedirect: "/login"
 }), function(req, res){
 });
@@ -64,6 +64,9 @@ router.get("/todos", function(req, res){
 	res.render("todos");
 });
 
+// Hangman app
+router.get("/hangman", function(req, res){
+	res.render("hangman");
+});
+
 module.exports = router;
-
-
