@@ -1,4 +1,3 @@
-
 html, body {
   margin:0;
   padding:0;
@@ -17,11 +16,6 @@ html, body {
   transition: all 0.2s ease-in-out;
 }
 
-.img-animation:hover {
-  transform: scale(0.95);
-}
-
-
 .footer {
     background-color: #111111;
     color: #eeeeee;
@@ -36,6 +30,10 @@ html, body {
 
 #page-content {
   flex: 1 0 auto;
+}
+
+.img-animation:hover {
+  transform: scale(0.95);
 }
 
 #sticky-footer {
