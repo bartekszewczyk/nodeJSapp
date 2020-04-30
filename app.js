@@ -16,7 +16,8 @@ var commentRoutes	 = require("./routes/comments"),
 	pageRoutes = require("./routes/pages"),
 	indexRoutes 	 = require("./routes/index");
 
-mongoose.connect("mongodb://mongo:27017/nodeJSapp", {useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect("mongodb://mongod:27017/nodeJSapp", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb://localhost/nodeJSapp", {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
