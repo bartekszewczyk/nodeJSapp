@@ -38,29 +38,29 @@ function seedDB(){
             }
             console.log("removed comments!");
              //add a few pages
-            data.forEach(function(seed){
-                Page.create(seed, function(err, page){
-                    if(err){
-                        console.log(err)
-                    } else {
-                        console.log("added a page");
-                        //create a comment
-                        Comment.create(
-                            {
-                                text: "To jest jakiś treściwy komentarz",
-                               author: "asd"
-                            }, function(err, comment){
-                                if(err){
-                                    console.log(err);
-                                } else {
-                                    page.comments.push(comment);
-                                    page.save();
-                                    console.log("Created new comment");
-                                }
-                            });
-                    }
-                });
-            });
+            // data.forEach(function(seed){
+            //     Page.create(seed, function(err, page){
+            //         if(err){
+            //             console.log(err)
+            //         } else {
+            //             console.log("added a page");
+            //             //create a comment
+            //             Comment.create(
+            //                 {
+            //                     text: "To jest jakiś treściwy komentarz",
+            //                    author: "asd"
+            //                 }, function(err, comment){
+            //                     if(err){
+            //                         console.log(err);
+            //                     } else {
+            //                         page.comments.push(comment);
+            //                         page.save();
+            //                         console.log("Created new comment");
+            //                     }
+            //                 });
+            //         }
+            //     });
+            // });
         });
     });
     //add a few comments
