@@ -1,0 +1,23 @@
+<%- include ("../partials/header") %>
+<%- include("../partials/sidebar") %>
+
+<div class="formContainer">
+
+<div class="fadeIn">
+		<div class="">
+			<p class="">Create a New Page</p>
+    	</div>
+		<form action="/pages" method="POST">
+				<input class="formInputText" type="text" name="name" placeholder="name">
+				<input class="formInputText" type="number" name="price" placeholder="price" min="0.01" step="0.01">
+				<input class="formInputText" type="text" name="image" placeholder="image url">
+				<input class="formInputText" type="text" name="description" placeholder="description">
+				<input class="loginButton" type="submit" value="Add">
+		</form>
+				<a href="/pages">Go Back</a>
+</div>
+
+</div>
+
+
+<%- include ("../partials/footer") %>

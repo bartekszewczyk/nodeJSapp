@@ -1,0 +1,28 @@
+<%- include ("./partials/header") %>
+<%- include("./partials/sidebar") %>
+
+<div class="wrap">
+
+<div class="loginWrapper fadeIn">
+  <div class="loginContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="">
+		<i class="mr-3 mt-3 rounded-circle"></i>
+    </div>
+	<!-- Register Form -->
+	<form action="/register" method="POST">
+		<input class="loginInputText" type="text" name="username" placeholder="username">
+		<input class="loginInputText" type="password" name="password" placeholder="password">
+		<input class="loginButton" type="submit" value="Sign Up">
+	</form>
+    <div class="loginFooter">
+      <a class="underlineHover" href="/pages">Go Back</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<%- include ("./partials/footer") %>

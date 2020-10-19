@@ -1,0 +1,53 @@
+<%- include("../partials/header") %>
+<%- include("../partials/sidebar") %>
+
+<main id="page-content" class="container-fluid fadeIn">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-2 col-md-12 col-sm-12 m-1">
+        <%- include("../partials/menu") %>
+      </div>
+
+      <div class="col-lg-8 col-md-12 col-sm-12 m-1">
+        <header class="jumbotron">
+          <h1 class="display-3 ml-5">Welcome!</h1>
+          <pre>
+              This WebApp is made with NodeJS (and all main modules - like Express and Passport), REST, Boostrap, jQuery
+          and some basic HTML, CSS and JS scripts. App is using middlewares for user verification and some alerts
+          (you can test it in 'Sign Up' form and then 'Add New Page').
+
+          There are also some games and quick tools you can check in menu or 'Landing Page'
+          (I recommend to check the 'Keyboard Drums').
+
+          Whole thing is in docker container connected to MongoDB and deployed in docker-compose on my personal home server.
+
+              I hope You enjoy it, cheers :)
+            </pre>
+          <hr class="my-4">
+          <p>
+            <a class="btn btn-secondary btn-lg ml-5" href="/pages/new">Add New Page »</a>
+          </p>
+        </header>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 hidden-sm">
+      </div>
+      <div class="col-md-10 col-md-10 col-sm-12">
+        <% pages.forEach(function(page){ %>
+        <a href="/pages/<%= page._id %>">
+          <figure class="col-md-4">
+            <img class="img-fluid img-shadow img-animation" src="<%= page.image %>">
+          </figure>
+        </a>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<%- include ("../partials/footer") %>

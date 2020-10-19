@@ -1,0 +1,25 @@
+<%- include ("../partials/header") %>
+<%- include("../partials/sidebar") %>
+
+<div class="formContainer">
+
+<div class="fadeIn">
+	<div class="">
+		<div class="">
+			<p class="">Add New Comment To: " <%= page.name %> "</p>
+    	</div>
+		<form action="/pages/<%= page._id %>/comments" method="POST">
+			<div class="form-group">
+				<input class="form-control" type="text" name="comment[text]" placeholder="text">
+			</div>
+			<div class="form-group">
+				<input class="btn btn-large btn-secondary btn-block" type="submit" value="Add Comment">
+			</div>
+		</form>
+		<a href="/pages/<%= page.id %>">Go Back</a>
+	</div>
+</div>
+
+</div>
+
+<%- include ("../partials/footer") %>
